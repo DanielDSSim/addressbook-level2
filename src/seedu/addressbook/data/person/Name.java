@@ -4,6 +4,7 @@ import seedu.addressbook.data.exception.IllegalValueException;
 
 import java.util.Arrays;
 import java.util.List;
+import java.lang.String;
 
 /**
  * Represents a Person's name in the address book.
@@ -41,6 +42,10 @@ public class Name {
      */
     public List<String> getWordsInName() {
         return Arrays.asList(fullName.split("\\s+"));
+    }
+
+    public int compareTo(Name o) {
+        return this.fullName.compareTo(o.fullName);
     }
 
     @Override

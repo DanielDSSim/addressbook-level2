@@ -1,24 +1,19 @@
 package seedu.addressbook.commands;
 
-import seedu.addressbook.data.person.ReadOnlyPerson;
-
-import java.util.List;
-
-
 /**
- * Sorts all people by index numbers.
+ * Sorts all people by Name.
  */
 public class SortCommand extends Command {
 
     public static final String COMMAND_WORD = "sort";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Sorts all people by index numbers.\n"
+            + ": Sorts all people by Name.\n"
             + "Example: " + COMMAND_WORD;
-
 
     @Override
     public CommandResult execute() {
+        addressBook.getAllPersons().sort();
         return new CommandResult("Hello World");
     }
 }

@@ -70,6 +70,10 @@ public class Person implements ReadOnlyPerson {
         tags.addAll(replacement);
     }
 
+    public int compareTo(Person o) {
+        return this.getName().compareTo(o.getName());
+    }
+
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object

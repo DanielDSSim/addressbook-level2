@@ -81,6 +81,19 @@ public class UniquePersonList implements Iterable<Person> {
         return Collections.unmodifiableList(internalList);
     }
 
+    /**
+     * Returns a modifiable java List view of Strings.
+     * For use with other methods/libraries.
+     * Any changes to the internal list/elements are immediately visible in the returned list.
+     */
+    public List<String> listView() {
+        List<String> people = new ArrayList<>();
+        for(int i = 0; i < internalList.size(); i++) {
+            people.add(internalList.get(i).getName().fullName);
+        }
+        return people;
+    }
+
 
     /**
      * Checks if the list contains an equivalent person as the given argument.
@@ -127,6 +140,10 @@ public class UniquePersonList implements Iterable<Person> {
      */
     public void clear() {
         internalList.clear();
+    }
+
+    public void sort() {
+        Collections.sort(internalList);
     }
 
     @Override
